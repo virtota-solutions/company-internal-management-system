@@ -20,7 +20,7 @@ namespace SeniorProjectAPI.Controllers
             return View();
         }
 
-        [Authorize(Users="user\\user")]
+        [Authorize(Users="redmond\\swalther")]
         public ActionResult UserSecrets()
         {
             return view();
