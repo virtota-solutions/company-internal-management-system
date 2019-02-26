@@ -6,13 +6,24 @@ using System.Web.Mvc;
 
 namespace SeniorProjectAPI.Controllers
 {
+    [HandleError]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
+        }
+
+        [Authorize(Roles = "Managers")]
+        public ActionResult CompanySecrets()
+        {
+            return View();
+        }
+
+        [Authorize(Users="user\\user")]
+        public ActionResult UserSecrets()
+        {
+            return view();
         }
     }
 }
