@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Security.Cryptography;
+//to be implemneted later https://www.c-sharpcorner.com/UploadFile/145c93/save-password-using-salted-hashing/ follow link for password encrpytion how to, this is just a simple one 
 
 namespace SeniorProjectAPI.Controllers
 {
@@ -26,7 +27,6 @@ namespace SeniorProjectAPI.Controllers
             {
                 data_input[i + password_bytes.Length] = salt[i];
             }
-
             SHA512 shaM = new SHA512Managed();
             var hashed_byte_array = shaM.ComputeHash(data_input);
             string hashed_result = System.Convert.ToBase64String(hashed_byte_array);
